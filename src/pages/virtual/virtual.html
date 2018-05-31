@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title text-center>
+        Virtual Scroll
+      </ion-title>
+    </ion-navbar>
+</ion-header>
+  
+<ion-content>
+    <ion-list [virtualScroll]="users" [approxItemHeight]="'88px'">
+        <ion-card *virtualItem="let user">
+     
+          <ion-item text-capitalize>
+            <ion-avatar item-start>
+              <ion-img [src]="user.picture?.thumbnail"></ion-img>
+            </ion-avatar>
+            <h2>{{ user.name?.first }} {{ user.name?.last }}</h2>
+          </ion-item>
+     
+          <ion-card-content>
+            {{ user.email }}
+          </ion-card-content>
+     
+        </ion-card>
+      </ion-list>
+</ion-content>
